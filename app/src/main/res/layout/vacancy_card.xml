@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_rounded_gray_8"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/looking_for_vacancy_count_info"
+        style="@style/Text_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/special_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Сейчас просматривает 1 человек" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/selected_favorite_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/favorite_selected_icon_description"
+            android:src="@drawable/favorite_selected"/>
+
+        <ImageView
+            android:id="@+id/unselected_favorite_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/favorite_unselected_icon_description"
+            android:src="@drawable/favorite_unselected"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/vacancy_title"
+        style="@style/Title_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/looking_for_vacancy_count_info"
+        tools:text="UI/UX Designer" />
+
+    <TextView
+        android:id="@+id/salary"
+        style="@style/Title_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vacancy_title"
+        tools:text="1500-2900 Br" />
+
+    <TextView
+        android:id="@+id/address_town"
+        style="@style/Text_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salary"
+        tools:text="Минск" />
+
+    <TextView
+        android:id="@+id/company_name"
+        style="@style/Text_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:drawablePadding="8dp"
+        app:drawableEndCompat="@drawable/ic_verified"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_town"
+        tools:text="Мобирикс"/>
+
+    <TextView
+        android:id="@+id/experience_preview_text"
+        style="@style/Text_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:drawablePadding="4dp"
+        app:drawableStartCompat="@drawable/ic_briefcase"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_name"
+        tools:text="Опыт от 1 года до 3 лет"/>
+
+    <TextView
+        android:id="@+id/published_date"
+        style="@style/Text_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/basic_extra_light_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/experience_preview_text"
+        tools:text="Опубликовано 16 февраля" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/looking_for_employee_button"
+        style="@style/BasicGreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_weight="0.5"
+        android:text="@string/apply_for_a_vacancy_button_text"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/published_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

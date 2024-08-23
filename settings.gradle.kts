@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "EffMobContest"
 include(":app")
- 
+include(":core")
