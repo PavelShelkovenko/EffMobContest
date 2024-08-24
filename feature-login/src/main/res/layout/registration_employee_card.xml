@@ -43,9 +43,9 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/continue_button"
             style="@style/BasicBlueButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_weight="0.5"
+            android:layout_weight="1"
             android:text="@string/continue_button_text" />
 
         <TextView
@@ -53,12 +53,10 @@
             style="@style/ButtonText2"
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:text="@string/enter_with_password"
-            android:textAlignment="center"/>
+            android:text="@string/enter_with_password" />
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

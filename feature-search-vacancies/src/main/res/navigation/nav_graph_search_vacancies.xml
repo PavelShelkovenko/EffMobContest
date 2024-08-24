@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_search_vacancies"
+    app:startDestination="@id/searchVacanciesFragment">
+
+    <fragment
+        android:id="@+id/searchVacanciesFragment"
+        android:name="com.pavelshelkovenko.feature_search_vacancies.SearchVacanciesFragment"
+        android:label="SearchVacanciesFragment" >
+        <action
+            android:id="@+id/action_searchVacanciesFragment_to_vacancyInComplianceFragment"
+            app:destination="@id/vacancyInComplianceFragment" />
+        <action
+            android:id="@+id/action_searchVacanciesFragment_to_vacancyDetails"
+            app:destination="@id/vacancyDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacancyInComplianceFragment"
+        android:name="com.pavelshelkovenko.feature_search_vacancies.VacancyInComplianceFragment"
+        android:label="VacancyInComplianceFragment" >
+        <action
+            android:id="@+id/action_vacancyInComplianceFragment_to_vacancyDetails"
+            app:destination="@id/vacancyDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacancyDetails"
+        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetails"
+        android:label="VacancyDetails" />
+</navigation>

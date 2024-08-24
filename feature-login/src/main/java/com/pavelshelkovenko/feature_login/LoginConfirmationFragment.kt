@@ -1,4 +1,4 @@
-package com.pavelshelkovenko.effmobcontest
+package com.pavelshelkovenko.feature_login
 
 import androidx.fragment.app.Fragment
 

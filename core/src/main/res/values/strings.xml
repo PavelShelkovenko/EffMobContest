@@ -13,6 +13,11 @@
     <string name="confirmation_button_text">Подтвердить</string>
     <string name="looking_for_employee_button_text">Я ищу сотрудников</string>
     <string name="map_button_text">Карта</string>
+    <string name="bottom_navigation_search_title">Поиск</string>
+    <string name="bottom_navigation_favorite_title">Избранное</string>
+    <string name="bottom_navigation_responses_title">Отклики</string>
+    <string name="bottom_navigation_messages_title">Сообщения</string>
+    <string name="bottom_navigation_profile_title">Профиль</string>
     <string name="apply_for_a_vacancy_button_text">Откликнуться</string>
     <string name="info_registration_screen_second">Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет</string>
     <string name="title_main_screen">Вакансии для вас</string>

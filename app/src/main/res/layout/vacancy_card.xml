@@ -29,14 +29,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/favorite_selected_icon_description"
-            android:src="@drawable/favorite_selected"/>
+            android:src="@drawable/ic_favorite_selected"/>
 
         <ImageView
             android:id="@+id/unselected_favorite_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/favorite_unselected_icon_description"
-            android:src="@drawable/favorite_unselected"/>
+            android:src="@drawable/ic_favorite_unselected"/>
 
     </FrameLayout>
 

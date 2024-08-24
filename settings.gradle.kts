@@ -22,3 +22,10 @@ dependencyResolutionManagement {
 rootProject.name = "EffMobContest"
 include(":app")
 include(":core")
+include(":feature-profile")
+include(":feature-messages")
+include(":feature-responses")
+include(":feature-favorite-vacancies")
+include(":feature-search-vacancies")
+include(":feature-login")
+include(":feature-vacancy-details")

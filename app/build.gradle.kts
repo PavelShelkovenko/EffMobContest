@@ -43,6 +43,11 @@ dependencies {
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.navigation)
     implementation(project(":core"))
+    implementation(project(":feature-profile"))
+    implementation(project(":feature-messages"))
+    implementation(project(":feature-responses"))
+    implementation(project(":feature-favorite-vacancies"))
+    implementation(project(":feature-search-vacancies"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
