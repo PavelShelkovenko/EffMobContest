@@ -48,6 +48,8 @@ dependencies {
     implementation(project(":feature-responses"))
     implementation(project(":feature-favorite-vacancies"))
     implementation(project(":feature-search-vacancies"))
+    implementation(project(":feature-login"))
+    implementation(project(":feature-vacancy-details"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
