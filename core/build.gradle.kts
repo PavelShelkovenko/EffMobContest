@@ -41,4 +41,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.kotlin.serialization)
+    implementation(libs.kotlin.serialization.json)
+    implementation(libs.client.okhttp)
+    implementation(libs.client.logging.interceptor)
 }

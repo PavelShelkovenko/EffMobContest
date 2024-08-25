@@ -13,7 +13,12 @@
             app:destination="@id/vacancyInComplianceFragment" />
         <action
             android:id="@+id/action_searchVacanciesFragment_to_vacancyDetails"
-            app:destination="@id/vacancyDetails" />
+            app:destination="@id/vacancyDetails" >
+            <argument
+                android:name="vacancy_id"
+                app:argType="string"
+                android:defaultValue="&quot;0&quot;" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/vacancyInComplianceFragment"
@@ -21,10 +26,19 @@
         android:label="VacancyInComplianceFragment" >
         <action
             android:id="@+id/action_vacancyInComplianceFragment_to_vacancyDetails"
-            app:destination="@id/vacancyDetails" />
+            app:destination="@id/vacancyDetails" >
+            <argument
+                android:name="vacancy_id"
+                app:argType="string"
+                android:defaultValue="&quot;0&quot;" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/vacancyDetails"
         android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetails"
-        android:label="VacancyDetails" />
+        android:label="VacancyDetails" >
+        <argument
+            android:name="vacancy_id"
+            app:argType="string" />
+    </fragment>
 </navigation>

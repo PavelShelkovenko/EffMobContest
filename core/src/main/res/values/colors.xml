@@ -7,5 +7,6 @@
     <color name="basic_extra_light_gray">#FF858688</color>
     <color name="special_blue">#FF2B7EFE</color>
     <color name="special_green">#FF4CB24E</color>
+    <color name="dark_green">#FF015905</color>
     <color name="special_dark_blue">#FF00427D</color>
 </resources>

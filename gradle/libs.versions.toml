@@ -13,6 +13,10 @@ smsConfirmationViewVersion = "1.8.1"
 viewbindingPropertyDelegate = "1.5.9"
 lifecycleRuntimeKtx = "2.8.4"
 navigationFragmentKtx = "2.7.7"
+retrofit = "2.11.0"
+okHttp = "4.11.0"
+kotlinSerializationJson = "1.6.0"
+jetbrainsKotlinJvm = "1.9.0"
 
 [libraries]
 # Core
@@ -36,10 +40,19 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
+#Network
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+client-okhttp = {group = "com.squareup.okhttp3", name = 'okhttp', version.ref = "okHttp" }
+client-logging-interceptor = {group = "com.squareup.okhttp3", name = 'logging-interceptor', version.ref = "okHttp" }
+converter-kotlin-serialization = {group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerializationJson" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 
 [bundles]
 core = ["androidx-core-ktx", "androidx-lifecycle-runtime-ktx", "androidx-appcompat", "androidx-activity"]
