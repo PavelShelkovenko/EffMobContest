@@ -8,8 +8,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.pavelshelkovenko.core.navigation.NavCommand
-import com.pavelshelkovenko.core.navigation.NavigationProvider
+import com.pavelshelkovenko.navigation.NavCommand
+import com.pavelshelkovenko.navigation.NavigationProvider
 import com.pavelshelkovenko.effmobcontest.databinding.ActivityMainBinding
 
 

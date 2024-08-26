@@ -1,4 +1,4 @@
-package com.pavelshelkovenko.core.navigation
+package com.pavelshelkovenko.navigation
 
 import androidx.fragment.app.Fragment
 

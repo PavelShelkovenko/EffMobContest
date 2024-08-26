@@ -11,4 +11,5 @@ java {
 
 dependencies {
     implementation(libs.bundles.network)
+    implementation(libs.koin.core)
 }

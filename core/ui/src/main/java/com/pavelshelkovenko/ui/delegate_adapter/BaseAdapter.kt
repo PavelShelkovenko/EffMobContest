@@ -1,4 +1,4 @@
-package com.pavelshelkovenko.core.delegate_adapter
+package com.pavelshelkovenko.ui.delegate_adapter
 
 import android.util.Log
 import android.util.SparseArray

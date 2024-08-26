@@ -7,17 +7,19 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.pavelshelkovenko.data.Repo
+import com.pavelshelkovenko.data.OffersAndVacanciesRepository
 import com.pavelshelkovenko.data.models.OffersAndVacancies
 import com.pavelshelkovenko.feature_search_vacancies.databinding.FragmentSearchVacanciesBinding
 import com.pavelshelkovenko.feature_vacancy_details.VacancyDetails.Companion.VACANCY_ID_KEY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 class SearchVacanciesFragment: Fragment(R.layout.fragment_search_vacancies) {
 
     private val binding: FragmentSearchVacanciesBinding by viewBinding(FragmentSearchVacanciesBinding::bind)
     private var tempResponse: OffersAndVacancies? = null // TODO Для теста, убрать
+    private val repository: OffersAndVacanciesRepository by inject()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,11 +30,10 @@ class SearchVacanciesFragment: Fragment(R.layout.fragment_search_vacancies) {
                     bundleOf(VACANCY_ID_KEY to id)
                 )
             }
-
         }
 
         lifecycleScope.launch(Dispatchers.IO) {
-            val response = Repo.getRepo().getOffersAndVacancies()
+            val response = repository.getOffersAndVacancies()
             tempResponse = response.getOrNull()
         }
     }

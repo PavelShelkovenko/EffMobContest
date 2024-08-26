@@ -11,4 +11,5 @@ java {
 dependencies {
     implementation(project(":core:network"))
     implementation(libs.retrofit)
+    implementation(libs.koin.core)
 }

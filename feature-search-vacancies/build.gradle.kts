@@ -36,11 +36,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":core-ui"))
+    implementation(project(":core:ui"))
     implementation(project(":core:data"))
     implementation(project(":feature-vacancy-details"))
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.core)
     implementation(libs.bundles.navigation)
+    implementation(libs.bundles.di)
 }

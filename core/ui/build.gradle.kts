@@ -4,11 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.pavelshelkovenko.core"
+    namespace = "com.pavelshelkovenko.ui"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 28
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -29,18 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
-    implementation(libs.bundles.core)
     implementation(libs.bundles.ui.common)
-    implementation(libs.bundles.navigation)
-    implementation(libs.bundles.network)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation(libs.bundles.core)
 }

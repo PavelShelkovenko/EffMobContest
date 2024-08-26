@@ -1,4 +1,4 @@
-package com.pavelshelkovenko.core.navigation
+package com.pavelshelkovenko.navigation
 
 import android.net.Uri
 import android.os.Bundle
