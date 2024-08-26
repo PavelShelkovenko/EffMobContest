@@ -1,20 +1,20 @@
 package com.pavelshelkovenko.data.models
 
 class Vacancy(
-    var id: String,
-    var lookingNumber: Int,
-    var title: String,
-    var address: Address,
-    var company: String,
-    var experience: Experience,
-    var publishedDate: String,
-    var isFavorite: Boolean,
-    var salary: Salary,
-    var schedules: List<String> = arrayListOf(),
-    var appliedNumber: Int,
-    var description: String,
-    var responsibilities: String,
-    var questions: List<String> = arrayListOf()
+    val id: String,
+    val lookingNumber: Int,
+    val title: String,
+    val address: Address,
+    val company: String,
+    val experience: Experience,
+    val publishedDate: String,
+    val isFavorite: Boolean,
+    val salary: Salary,
+    val schedules: String,
+    val appliedNumber: Int,
+    val description: String,
+    val responsibilities: String,
+    val questions: List<String> = emptyList()
 )
 
 class Address (

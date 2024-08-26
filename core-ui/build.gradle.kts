@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.pavelshelkovenko.feature_vacancy_details"
+    namespace = "com.pavelshelkovenko.core_ui"
     compileSdk = 34
 
     defaultConfig {
@@ -23,9 +23,6 @@ android {
             )
         }
     }
-    buildFeatures {
-        viewBinding = true
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -36,10 +33,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":core-ui"))
-    implementation(project(":core:data"))
-    implementation(libs.bundles.ui.common)
-    implementation(libs.bundles.core)
-    implementation(libs.bundles.navigation)
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

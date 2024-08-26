@@ -5,20 +5,20 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 class VacancyDto(
-    @SerialName("id") var id: String? = null,
-    @SerialName("lookingNumber") var lookingNumber: Int? = null,
-    @SerialName("title") var title: String? = null,
-    @SerialName("address") var address: Address? = null,
-    @SerialName("company") var company: String? = null,
-    @SerialName("experience") var experience: Experience? = null,
-    @SerialName("publishedDate") var publishedDate: String? = null,
-    @SerialName("isFavorite") var isFavorite: Boolean? = null,
-    @SerialName("salary") var salary: Salary? = null,
-    @SerialName("schedules") var schedules: List<String>? = null,
-    @SerialName("appliedNumber") var appliedNumber: Int? = null,
-    @SerialName("description") var description: String? = null,
-    @SerialName("responsibilities") var responsibilities: String? = null,
-    @SerialName("questions") var questions: List<String>? = null
+    @SerialName("id") val id: String? = null,
+    @SerialName("lookingNumber") val lookingNumber: Int? = null,
+    @SerialName("title") val title: String? = null,
+    @SerialName("address") val address: Address? = null,
+    @SerialName("company") val company: String? = null,
+    @SerialName("experience") val experience: Experience? = null,
+    @SerialName("publishedDate") val publishedDate: String? = null,
+    @SerialName("isFavorite") val isFavorite: Boolean? = null,
+    @SerialName("salary") val salary: Salary? = null,
+    @SerialName("schedules") val schedules: List<String>? = null,
+    @SerialName("appliedNumber") val appliedNumber: Int? = null,
+    @SerialName("description") val description: String? = null,
+    @SerialName("responsibilities") val responsibilities: String? = null,
+    @SerialName("questions") val questions: List<String>? = null
 )
 
 @Serializable

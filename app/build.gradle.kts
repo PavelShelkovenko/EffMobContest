@@ -43,6 +43,7 @@ dependencies {
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.navigation)
     implementation(project(":core"))
+    implementation(project(":core-ui"))
     implementation(project(":feature-profile"))
     implementation(project(":feature-messages"))
     implementation(project(":feature-responses"))

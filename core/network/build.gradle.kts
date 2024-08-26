@@ -10,9 +10,5 @@ java {
 }
 
 dependencies {
-    implementation(libs.retrofit)
-    implementation(libs.converter.kotlin.serialization)
-    implementation(libs.kotlin.serialization.json)
-    implementation(libs.client.okhttp)
-    implementation(libs.client.logging.interceptor)
+    implementation(libs.bundles.network)
 }
