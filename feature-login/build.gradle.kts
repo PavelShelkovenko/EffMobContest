@@ -41,4 +41,6 @@ dependencies {
     implementation(libs.bundles.core)
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.navigation)
+    implementation(libs.bundles.di)
+    implementation("io.github.chaosleung:pinview:1.4.4")
 }

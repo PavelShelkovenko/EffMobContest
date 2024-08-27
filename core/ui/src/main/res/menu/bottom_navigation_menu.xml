@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_graph_search_vacancies"
-        android:icon="@drawable/bottom_navigation_search_icon"
+        android:icon="@drawable/ic_search"
         android:title="@string/bottom_navigation_search_title" />
     <item
         android:id="@+id/nav_graph_favorite_vacancies"
-        android:icon="@drawable/bottom_navigation_favorite_icon"
+        android:icon="@drawable/ic_favorite_unselected"
         android:title="@string/bottom_navigation_favorite_title" />
     <item
         android:id="@+id/nav_graph_responses"
-        android:icon="@drawable/bottom_navigation_responses_icon"
+        android:icon="@drawable/ic_email"
         android:title="@string/bottom_navigation_responses_title" />
     <item
         android:id="@+id/nav_graph_messages"
-        android:icon="@drawable/bottom_navigation_messages_icon"
+        android:icon="@drawable/ic_message"
         android:title="@string/bottom_navigation_messages_title" />
     <item
         android:id="@+id/nav_graph_profile"
-        android:icon="@drawable/bottom_navigation_profile_icon"
+        android:icon="@drawable/ic_profile"
         android:title="@string/bottom_navigation_profile_title" />
 </menu>

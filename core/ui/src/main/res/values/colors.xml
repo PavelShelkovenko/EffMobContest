@@ -9,4 +9,6 @@
     <color name="special_green">#FF4CB24E</color>
     <color name="dark_green">#FF015905</color>
     <color name="special_dark_blue">#FF00427D</color>
+    <color name="basic_red">#FFFF0000</color>
+    <color name="transparent">#00000000</color>
 </resources>

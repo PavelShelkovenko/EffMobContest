@@ -6,14 +6,24 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.pavelshelkovenko.feature_login.LoginFragment"
+        android:name="com.pavelshelkovenko.feature_login.email_login.EmailLoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_loginConfirmationFragment"
-            app:destination="@id/loginConfirmationFragment" />
+            app:destination="@id/loginConfirmationFragment">
+            <argument
+                android:name="email"
+                app:argType="string"
+                android:defaultValue=""/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/loginConfirmationFragment"
-        android:name="com.pavelshelkovenko.feature_login.LoginConfirmationFragment"
-        android:label="LoginConfirmationFragment" />
+        android:name="com.pavelshelkovenko.feature_login.confirmation_login.LoginConfirmationFragment"
+        android:label="LoginConfirmationFragment">
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

@@ -5,28 +5,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="16dp"
     android:background="@color/basic_black">
 
     <TextView
-        android:id="@+id/title_registration_screen_second"
+        android:id="@+id/title_login_confirmation"
         style="@style/Title_20"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="162dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Отправили код на example@gmail.com" />
 
     <TextView
-        android:id="@+id/info_registration_screen_second"
+        android:id="@+id/info_login_confirmation"
         style="@style/Title_16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/info_login_confirmation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_login_confirmation" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pin_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/info_registration_screen_second"
+        android:layout_marginStart="16dp"
+        android:inputType="number"
+        android:itemBackground="@color/basic_light_gray"
+        android:textColor="@color/basic_white"
+        android:textColorHint="@color/basic_extra_light_gray"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        android:hint=" ***"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:cursorVisible="true"
+        app:itemCount="4"
+        app:itemHeight="48dp"
+        app:itemWidth="48dp"
+        app:itemRadius="8dp"
+        app:itemSpacing="8dp"
+        app:cursorColor="@color/basic_extra_light_gray"
+        app:lineColor="@color/basic_light_gray"
+        app:viewType="rectangle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_registration_screen_second" />
+        app:layout_constraintTop_toBottomOf="@+id/info_login_confirmation" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/confirm_button"
@@ -35,7 +65,21 @@
         android:layout_height="48dp"
         android:text="@string/confirmation_button_text"
         android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:enabled="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_registration_screen_second" />
+        app:layout_constraintTop_toBottomOf="@+id/pin_code" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        style="@style/AppBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/basic_black"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_navigation_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
