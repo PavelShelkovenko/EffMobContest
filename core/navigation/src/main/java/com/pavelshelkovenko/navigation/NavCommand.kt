@@ -6,12 +6,7 @@ import androidx.navigation.NavOptions
 
 
 data class NavCommand(
-    val target: DeepLinkNavCommand,
+    val target: NavCommands,
     var args: Bundle? = null,
     val navOptions: NavOptions? = null
-)
-
-data class DeepLinkNavCommand(
-    val url: Uri,
-    val isSingleTop: Boolean = false
 )

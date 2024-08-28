@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 @Suppress("UNCHECKED_CAST")
 class BaseAdapter(
-    private val delegates: SparseArray<DelegateAdapter<DelegateItem, RecyclerView.ViewHolder>>
+    val delegates: SparseArray<DelegateAdapter<DelegateItem, RecyclerView.ViewHolder>>
 ) : ListAdapter<DelegateItem, RecyclerView.ViewHolder>(DelegateAdapterItemDiffCallback()) {
 
     override fun getItemViewType(position: Int): Int {
@@ -26,7 +26,11 @@ class BaseAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
         onBindViewHolder(holder, position, mutableListOf())
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int, payloads: MutableList<Any>) {
+    override fun onBindViewHolder(
+        holder: RecyclerView.ViewHolder,
+        position: Int,
+        payloads: MutableList<Any>
+    ) {
         val delegateAdapter = delegates[getItemViewType(position)]
         try {
             val delegatePayloads = payloads.map { it as DelegateItem.Payloadable }
@@ -39,10 +43,14 @@ class BaseAdapter(
     class Builder {
 
         private var count: Int = 0
-        private val delegates: SparseArray<DelegateAdapter<DelegateItem, RecyclerView.ViewHolder>> = SparseArray()
+        private val delegates: SparseArray<DelegateAdapter<DelegateItem, RecyclerView.ViewHolder>> =
+            SparseArray()
 
         fun add(delegateAdapter: DelegateAdapter<out DelegateItem, *>): Builder {
-            delegates.put(count++, delegateAdapter as DelegateAdapter<DelegateItem, RecyclerView.ViewHolder>)
+            delegates.put(
+                count++,
+                delegateAdapter as DelegateAdapter<DelegateItem, RecyclerView.ViewHolder>
+            )
             return this
         }
 

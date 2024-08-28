@@ -8,6 +8,20 @@
     <fragment
         android:id="@+id/favoriteVacanciesFragment"
         android:name="com.pavelshelkovenko.feature_favorite_vacancies.FavoriteVacanciesFragment"
-        android:label="FavoriteVacanciesFragment" />
+        android:label="FavoriteVacanciesFragment" >
+        <action
+            android:id="@+id/action_favoriteVacanciesFragment_to_vacancyDetails"
+            app:destination="@id/vacancyDetails">
+            <argument
+                android:name="vacancy_id"
+                app:argType="string"
+                android:defaultValue="&quot;0&quot;" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/vacancyDetails"
+        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetails"
+        android:label="VacancyDetails" />
 
 </navigation>

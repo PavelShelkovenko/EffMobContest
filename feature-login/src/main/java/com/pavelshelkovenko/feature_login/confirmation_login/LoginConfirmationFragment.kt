@@ -10,10 +10,10 @@ import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pavelshelkovenko.feature_login.R
 import com.pavelshelkovenko.feature_login.databinding.FragmentLoginConfirmationBinding
-import com.pavelshelkovenko.feature_login.openKeyboard
-import com.pavelshelkovenko.navigation.DeepLinkNavCommand
 import com.pavelshelkovenko.navigation.NavCommand
+import com.pavelshelkovenko.navigation.NavCommands
 import com.pavelshelkovenko.navigation.navigate
+import com.pavelshelkovenko.ui.extensions.openKeyboard
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -49,7 +49,7 @@ class LoginConfirmationFragment : Fragment(R.layout.fragment_login_confirmation)
         binding.confirmButton.setOnClickListener {
             navigate(
                 NavCommand(
-                    target = DeepLinkNavCommand(
+                    target = NavCommands.DeepLink(
                         url = Uri.parse("effmobcontest://main"),
                         isSingleTop = true
                     )

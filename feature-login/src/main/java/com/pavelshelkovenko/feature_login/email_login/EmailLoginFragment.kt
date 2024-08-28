@@ -13,9 +13,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pavelshelkovenko.feature_login.R
 import com.pavelshelkovenko.feature_login.confirmation_login.LoginConfirmationFragment
 import com.pavelshelkovenko.feature_login.databinding.FragmentEmailLoginBinding
-import com.pavelshelkovenko.feature_login.databinding.FragmentLoginConfirmationBinding
-import com.pavelshelkovenko.feature_login.gone
-import com.pavelshelkovenko.feature_login.visible
+import com.pavelshelkovenko.ui.extensions.gone
+import com.pavelshelkovenko.ui.extensions.visible
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.viewModel

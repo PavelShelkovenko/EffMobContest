@@ -1,4 +1,5 @@
 plugins {
+    alias(libs.plugins.ksp)
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
@@ -43,9 +44,11 @@ dependencies {
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.navigation)
     implementation(libs.bundles.di)
+    implementation(project(":domain"))
     implementation(project(":core:ui"))
-    implementation(project(":core:data"))
+    implementation(project(":data"))
     implementation(project(":core:network"))
+    implementation(project(":core:database"))
     implementation(project(":core:navigation"))
     implementation(project(":feature-profile"))
     implementation(project(":feature-messages"))

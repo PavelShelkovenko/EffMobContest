@@ -37,7 +37,11 @@ android {
 
 dependencies {
     implementation(project(":core:ui"))
+    implementation(project(":domain"))
+    implementation(project(":feature-search-vacancies"))
+    implementation(project(":feature-vacancy-details"))
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.core)
     implementation(libs.bundles.navigation)
+    implementation(libs.bundles.di)
 }
