@@ -5,16 +5,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.pavelshelkovenko.navigation.NavCommand
-import com.pavelshelkovenko.navigation.NavigationProvider
 import com.pavelshelkovenko.effmobcontest.databinding.ActivityMainBinding
+import com.pavelshelkovenko.navigation.NavCommand
 import com.pavelshelkovenko.navigation.NavCommands
+import com.pavelshelkovenko.navigation.NavigationProvider
 
 
 class MainActivity : AppCompatActivity(R.layout.activity_main), NavigationProvider {

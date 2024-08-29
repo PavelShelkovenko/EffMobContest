@@ -5,7 +5,6 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import retrofit2.Converter
 import retrofit2.Retrofit

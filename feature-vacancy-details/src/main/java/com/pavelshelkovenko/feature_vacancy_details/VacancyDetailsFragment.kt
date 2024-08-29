@@ -4,7 +4,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pavelshelkovenko.domain.models.Vacancy
 import com.pavelshelkovenko.feature_vacancy_details.BottomSheetRespondFragment.Companion.NO_ARGUMENT
-import com.pavelshelkovenko.feature_vacancy_details.BottomSheetRespondFragment.Companion.QUESTION_KEY
 import com.pavelshelkovenko.feature_vacancy_details.databinding.FragmentVacancyDetailsBinding
 import com.pavelshelkovenko.navigation.NavCommand
 import com.pavelshelkovenko.navigation.NavCommands
