@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.EffMobContest" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/basic_black</item>
+        <item name="android:navigationBarColor">@color/basic_black</item>
+    </style>
+
+    <style name="Theme.EffMobContest" parent="Base.Theme.EffMobContest" />
+
+    <style name="Title_22" parent="@android:style/TextAppearance">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:fontWeight">600</item>
+        <item name="android:font">@font/sf_pro_display_semibold</item>
+        <item name="android:lineHeight">26sp</item>
+    </style>
+
+    <style name="Title_20" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:fontWeight">600</item>
+        <item name="android:font">@font/sf_pro_display_semibold</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="Title_16" parent="@android:style/TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:fontWeight">500</item>
+        <item name="android:font">@font/sf_pro_display_medium</item>
+        <item name="android:lineHeight">19sp</item>
+    </style>
+
+    <style name="Title_14" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:fontWeight">500</item>
+        <item name="android:font">@font/sf_pro_display_medium</item>
+        <item name="android:lineHeight">17sp</item>
+    </style>
+
+    <style name="Text_14" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:fontWeight">400</item>
+        <item name="android:font">@font/sf_pro_display_regular</item>
+        <item name="android:lineHeight">17sp</item>
+    </style>
+
+    <style name="BasicEditTextStyle">
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">17sp</item>
+        <item name="android:fontWeight">400</item>
+        <item name="android:font">@font/sf_pro_display_regular</item>
+        <item name="android:textColorHint">@color/basic_extra_light_gray</item>
+    </style>
+
+    <style name="BasicBlueButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/background_button_blue</item>
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:font">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BigButton" parent="Widget.AppCompat.Button">
+
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:font">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">20sp</item>
+    </style>
+
+    <style name="BasicGreenButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/background_rounded_green_50</item>
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:font">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">18sp</item>
+    </style>
+
+    <style name="SmallGrayButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/background_rounded_light_gray_50</item>
+        <item name="android:textColor">@color/basic_white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:font">@font/sf_pro_display_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="ButtonText14" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/special_blue</item>
+        <item name="android:fontWeight">400</item>
+        <item name="android:font">@font/sf_pro_display_regular</item>
+        <item name="android:lineHeight">18sp</item>
+    </style>
+
+    <style name="AppBottomNavigation" parent="Widget.Design.BottomNavigationView">
+        <item name="itemTextAppearanceInactive">@style/BottomTabText</item>
+        <item name="itemTextAppearanceActive">@style/BottomTabText</item>
+        <item name="itemIconTint">@color/bottom_navigation_color</item>
+        <item name="itemTextColor">@color/bottom_navigation_color</item>
+        <item name="backgroundTint">@color/basic_black</item>
+        <item name="itemRippleColor">@color/transparent</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="BottomTabText">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:lineHeight">11sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+</resources>

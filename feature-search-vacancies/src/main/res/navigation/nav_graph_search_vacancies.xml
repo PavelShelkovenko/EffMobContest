@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_search_vacancies"
+    app:startDestination="@id/mainSearchFragment">
+
+    <fragment
+        android:id="@+id/mainSearchFragment"
+        android:name="com.pavelshelkovenko.feature_search_vacancies.main.MainSearchFragment"
+        android:label="MainSearchFragment" >
+        <action
+            android:id="@+id/action_mainSearchFragment_to_extendedSearchFragment"
+            app:destination="@id/extendedSearchFragment" />
+        <action
+            android:id="@+id/action_mainSearchFragment_to_vacancyDetails"
+            app:destination="@id/vacancyDetails" >
+            <argument
+                android:name="vacancy_id"
+                app:argType="string"
+                android:defaultValue="&quot;0&quot;" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/extendedSearchFragment"
+        android:name="com.pavelshelkovenko.feature_search_vacancies.extended_search.ExtendedSearchFragment"
+        android:label="ExtendedSearchFragment" >
+        <action
+            android:id="@+id/action_extendedSearchFragment_to_vacancyDetails"
+            app:destination="@id/vacancyDetails" >
+            <argument
+                android:name="vacancy_id"
+                app:argType="string"
+                android:defaultValue="&quot;0&quot;" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/vacancyDetails"
+        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetailsFragment"
+        android:label="VacancyDetails" >
+        <argument
+            android:name="vacancy_id"
+            app:argType="string" />
+    </fragment>
+</navigation>

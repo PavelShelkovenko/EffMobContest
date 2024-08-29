@@ -1,17 +1,28 @@
 [versions]
 agp = "8.5.0"
-kotlin = "1.9.0"
+kotlin = "1.9.20"
 coreKtx = "1.13.1"
-junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.8.4"
+jetbrainsKotlinJvm = "1.9.0"
 appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.1"
 constraintlayout = "2.1.4"
 viewbindingPropertyDelegate = "1.5.9"
-lifecycleRuntimeKtx = "2.8.4"
 navigationFragmentKtx = "2.7.7"
+koin = "3.4.0"
+retrofit = "2.11.0"
+okHttp = "4.11.0"
+kotlinSerializationJson = "1.6.0"
+room = "2.6.1"
+ksp = "1.9.20-1.0.14"
+glide = "4.16.0"
+kotlinx-coroutines-core = "1.7.1"
+kotlinx-coroutines-android = "1.7.3"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+
 
 [libraries]
 # Core
@@ -19,6 +30,8 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-android" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core" }
 
 # UI common
 view-binding-property-delegate = { module = "com.github.kirich1409:viewbindingpropertydelegate-noreflection", version.ref = "viewbindingPropertyDelegate" }
@@ -34,11 +47,38 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
+#Network
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+client-okhttp = {group = "com.squareup.okhttp3", name = 'okhttp', version.ref = "okHttp" }
+client-logging-interceptor = {group = "com.squareup.okhttp3", name = 'logging-interceptor', version.ref = "okHttp" }
+converter-kotlin-serialization = {group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerializationJson" }
+
+# DI
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+
+# Room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
+# Glide
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
 
 [bundles]
-core = ["androidx-core-ktx", "androidx-lifecycle-runtime-ktx", "androidx-appcompat", "androidx-activity"]
+core = ["androidx-core-ktx", "androidx-lifecycle-runtime-ktx", "androidx-appcompat", "androidx-activity", "kotlinx-coroutines-core", "kotlinx-coroutines-android"]
 ui-common = ["androidx-constraintlayout", "material", "view-binding-property-delegate"]
 navigation = ["androidx-navigation-fragment-ktx", "androidx-navigation-ui-ktx"]
+network = ["retrofit", "client-okhttp", "client-logging-interceptor","converter-kotlin-serialization","kotlin-serialization-json"]
+di = ["koin-core", "koin-android"]
+room = ["room-runtime", "room-ktx"]

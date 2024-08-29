@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EffMobContest</string>
+    <string name="title_login_screen">Вход в личный кабинет</string>
+    <string name="title_employee_card">Поиск работы</string>
+    <string name="title_employer_card">Поиск сотрудников</string>
+    <string name="info_login_employer_card">Размещение вакансий и доступ к базе резюме</string>
+    <string name="enter_with_password">Войти с паролем</string>
+    <string name="title_employee_card_hint">Электронная почта или телефон</string>
+    <string name="extended_search_filter_button_text">По соответствию</string>
+    <string name="extended_search_input_field_hint">Должность по подходящим вакансиям</string>
+    <string name="main_screen_search_hint">Должность, ключевые слова</string>
+    <string name="continue_button_text">Продолжить</string>
+    <string name="title_favorite">Избранное</string>
+    <string name="title_tasks">Ваши задачи</string>
+    <string name="ask_employer_question">Задайте вопрос работодателю</string>
+    <string name="employer_gets_your_question">Он получит его с откликом на вакансию</string>
+    <string name="confirmation_button_text">Подтвердить</string>
+    <string name="looking_for_employee_button_text">Я ищу сотрудников</string>
+    <string name="map_button_text">Карта</string>
+    <string name="bottom_navigation_search_title">Поиск</string>
+    <string name="bottom_navigation_favorite_title">Избранное</string>
+    <string name="bottom_navigation_responses_title">Отклики</string>
+    <string name="bottom_navigation_messages_title">Сообщения</string>
+    <string name="bottom_navigation_profile_title">Профиль</string>
+    <string name="apply_for_a_vacancy_button_text">Откликнуться</string>
+    <string name="published_info">Опубликовано %1$s</string>
+    <string name="incorrect_email">Вы ввели неверный e-mail</string>
+    <string name="info_login_confirmation">Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет</string>
+    <string name="title_main_screen">Вакансии для вас</string>
+    <string name="title_vacancy_respond">Резюме для отклика</string>
+    <string name="mock_info_title_respond">UI/UX дизайнер </string>
+    <string name="add_covering_letter_button_text">Добавить сопроводительное</string>
+    <string name="add_covering_letter_hint">Ваше сопроводительное письмо</string>
+    <string name="title_login_confirmation">Отправили код на %1$s</string>
+    <string name="question_pattern">%1$s?</string>
+    <string name="favorite_selected_icon_description">Иконка избранного выбрана</string>
+    <string name="favorite_unselected_icon_description">Иконка избранного не выбрана</string>
+    <string name="company_address_pattern">%1$s, %2$s, %3$s</string>
+    <string name="zero_items_title">Здесь пока пусто</string>
+    <string name="error_title">Произошла какая-то ошибка</string>
+    <string name="repeat_button_text">Повторить</string>
+
+    <plurals name="looking_number">
+        <item quantity="one">Сейчас просматривает 1 человек</item>
+        <item quantity="few">Сейчас просматривают %d человека</item>
+        <item quantity="other">Сейчас просматривают %d человек</item>
+    </plurals>
+
+    <plurals name="vacancies_number">
+        <item quantity="one">Еще %d вакансия</item>
+        <item quantity="few">Еще %d вакансии</item>
+        <item quantity="other">Еще %d вакансий</item>
+    </plurals>
+
+    <plurals name="extended_search_vacancy_count">
+        <item quantity="one">%d вакансия</item>
+        <item quantity="few">%d вакансии</item>
+        <item quantity="other">%d вакансий</item>
+    </plurals>
+
+    <plurals name="looking_number_details">
+        <item quantity="one">1 человек сейчас смотрит</item>
+        <item quantity="few">%d человека сейчас смотрят</item>
+        <item quantity="other">%d человек сейчас смотрят</item>
+    </plurals>
+
+    <plurals name="applied_number">
+        <item quantity="one">%d человек уже откликнулся</item>
+        <item quantity="few">%d человека уже откликнулись</item>
+        <item quantity="other">%d человек уже откликнулись</item>
+    </plurals>
+</resources>

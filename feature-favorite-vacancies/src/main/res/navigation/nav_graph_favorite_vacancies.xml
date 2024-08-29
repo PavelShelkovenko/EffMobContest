@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_favorite_vacancies"
+    app:startDestination="@id/favoriteVacanciesFragment">
+
+    <fragment
+        android:id="@+id/favoriteVacanciesFragment"
+        android:name="com.pavelshelkovenko.feature_favorite_vacancies.FavoriteVacanciesFragment"
+        android:label="FavoriteVacanciesFragment" >
+        <action
+            android:id="@+id/action_favoriteVacanciesFragment_to_vacancyDetails"
+            app:destination="@id/vacancyDetails">
+            <argument
+                android:name="vacancy_id"
+                app:argType="string"
+                android:defaultValue="&quot;0&quot;" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/vacancyDetails"
+        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetailsFragment"
+        android:label="VacancyDetails" />
+
+</navigation>

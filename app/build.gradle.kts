@@ -1,4 +1,5 @@
 plugins {
+    alias(libs.plugins.ksp)
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
@@ -30,6 +31,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding = true
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -39,6 +43,20 @@ dependencies {
     implementation(libs.bundles.core)
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.navigation)
+    implementation(libs.bundles.di)
+    implementation(project(":domain"))
+    implementation(project(":core:ui"))
+    implementation(project(":data"))
+    implementation(project(":core:network"))
+    implementation(project(":core:database"))
+    implementation(project(":core:navigation"))
+    implementation(project(":feature-profile"))
+    implementation(project(":feature-messages"))
+    implementation(project(":feature-responses"))
+    implementation(project(":feature-favorite-vacancies"))
+    implementation(project(":feature-search-vacancies"))
+    implementation(project(":feature-login"))
+    implementation(project(":feature-vacancy-details"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
