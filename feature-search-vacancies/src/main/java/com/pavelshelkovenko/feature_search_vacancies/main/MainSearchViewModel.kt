@@ -2,9 +2,11 @@ package com.pavelshelkovenko.feature_search_vacancies.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pavelshelkovenko.domain.models.Vacancy
 import com.pavelshelkovenko.domain.repository.OffersAndVacanciesRepository
 import com.pavelshelkovenko.feature_search_vacancies.common.mapToOfferDelegateItems
 import com.pavelshelkovenko.feature_search_vacancies.common.mapToVacancyDelegateItems
+import com.pavelshelkovenko.feature_search_vacancies.main.MainSearchFragment.Companion.VACANCY_COUNT_TO_SHOW
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
@@ -30,7 +32,7 @@ class MainSearchViewModel(
                     screenState.update {
                         MainSearchScreenState.Content(
                             offers = mapToOfferDelegateItems(result.offers),
-                            vacancies = mapToVacancyDelegateItems(result.vacancies)
+                            vacancies = mapToVacancyDelegateItems(result.vacancies.take(VACANCY_COUNT_TO_SHOW))
                         )
                     }
                 }.onFailure {
@@ -53,13 +55,37 @@ class MainSearchViewModel(
                     if (index != -1) {
                         vacancyList[index] = mapToVacancyDelegateItems(listOf(newVacancy)).first()
                     }
-                }
 
-                screenState.update { oldState ->
-                    MainSearchScreenState.Content(
-                        offers = (oldState as MainSearchScreenState.Content).offers,
-                        vacancies = vacancyList
-                    )
+                    screenState.update { oldState ->
+                        MainSearchScreenState.Content(
+                            offers = (oldState as MainSearchScreenState.Content).offers,
+                            vacancies = vacancyList
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    fun syncVacanciesWithCache() {
+        viewModelScope.launch {
+            withContext(Dispatchers.Default) {
+                if (screenState.value is MainSearchScreenState.Content) {
+                    val oldVacancyList = (screenState.value as MainSearchScreenState.Content)
+                        .vacancies
+                        .toMutableList()
+                    val newVacancyList = mutableListOf<Vacancy>()
+                    oldVacancyList.forEach { vacancy ->
+                        repository.getVacancyById(vacancy.id() as String).onSuccess {
+                            newVacancyList.add(it)
+                        }
+                    }
+                    screenState.update { oldState ->
+                        MainSearchScreenState.Content(
+                            offers = (oldState as MainSearchScreenState.Content).offers,
+                            vacancies = mapToVacancyDelegateItems(newVacancyList)
+                        )
+                    }
                 }
             }
         }

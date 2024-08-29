@@ -36,9 +36,12 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:ui"))
     implementation(project(":domain"))
+    implementation(project(":core:ui"))
+    implementation(project(":core:navigation"))
     implementation(libs.bundles.ui.common)
     implementation(libs.bundles.core)
     implementation(libs.bundles.navigation)
+    implementation(libs.bundles.di)
+    implementation(libs.glide)
 }

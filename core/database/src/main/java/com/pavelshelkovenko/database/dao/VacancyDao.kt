@@ -21,6 +21,9 @@ interface VacancyDao {
     @Query("SELECT * FROM ${AppDatabase.VACANCY_TABLE_NAME} WHERE isFavorite = 1")
     suspend fun getFavoriteVacancies(): List<VacancyDbo>
 
+    @Query("SELECT * FROM ${AppDatabase.VACANCY_TABLE_NAME} WHERE isFavorite = 1")
+    fun getFavouritesFlow(): Flow<List<VacancyDbo>>
+
     @Query("SELECT * FROM ${AppDatabase.VACANCY_TABLE_NAME} WHERE id LIKE :id LIMIT 1")
     suspend fun getVacancyById(id: String): VacancyDbo?
 

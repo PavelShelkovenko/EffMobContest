@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/vacancyDetails"
-        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetails"
+        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetailsFragment"
         android:label="VacancyDetails" >
         <argument
             android:name="vacancy_id"

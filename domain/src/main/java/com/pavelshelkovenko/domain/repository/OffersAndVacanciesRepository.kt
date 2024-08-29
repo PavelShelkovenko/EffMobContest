@@ -2,6 +2,7 @@ package com.pavelshelkovenko.domain.repository
 
 import com.pavelshelkovenko.domain.models.OffersAndVacancies
 import com.pavelshelkovenko.domain.models.Vacancy
+import kotlinx.coroutines.flow.Flow
 
 
 interface OffersAndVacanciesRepository {
@@ -13,6 +14,8 @@ interface OffersAndVacanciesRepository {
     suspend fun getVacanciesFromCache(): List<Vacancy>
 
     suspend fun getFavoriteVacancies(): List<Vacancy>
+
+    suspend fun getFavoriteVacanciesFlow(): Flow<List<Vacancy>>
 
     suspend fun saveVacancyInCache(vacancy: Vacancy)
 }

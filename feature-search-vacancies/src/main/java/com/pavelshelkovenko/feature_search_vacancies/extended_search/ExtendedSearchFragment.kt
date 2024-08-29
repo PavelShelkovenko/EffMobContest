@@ -11,7 +11,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pavelshelkovenko.feature_search_vacancies.R
 import com.pavelshelkovenko.feature_search_vacancies.common.VacancyAdapter
 import com.pavelshelkovenko.feature_search_vacancies.databinding.FragmentExtendedSearchBinding
-import com.pavelshelkovenko.feature_vacancy_details.VacancyDetails.Companion.VACANCY_ID_KEY
+import com.pavelshelkovenko.feature_vacancy_details.VacancyDetailsFragment.Companion.VACANCY_ID_KEY
 import com.pavelshelkovenko.ui.delegate_adapter.BaseAdapter
 import com.pavelshelkovenko.ui.extensions.gone
 import com.pavelshelkovenko.ui.extensions.visible

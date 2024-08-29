@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/vacancyDetails"
-        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetails"
+        android:name="com.pavelshelkovenko.feature_vacancy_details.VacancyDetailsFragment"
         android:label="VacancyDetails" />
 
 </navigation>

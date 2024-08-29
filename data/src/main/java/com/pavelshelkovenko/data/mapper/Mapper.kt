@@ -52,7 +52,7 @@ class Mapper {
                 full = vacancyDto.salary?.full.orEmpty()
             ),
             schedules = vacancyDto.schedules
-                ?.joinToString(",")
+                ?.joinToString(", ")
                 ?.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
                 .orEmpty(),
             appliedNumber = vacancyDto.appliedNumber ?: 0,

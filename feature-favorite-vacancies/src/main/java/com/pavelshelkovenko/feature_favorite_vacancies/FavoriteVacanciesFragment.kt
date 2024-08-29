@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.navigation.fragment.findNavController
-import com.pavelshelkovenko.feature_vacancy_details.VacancyDetails.Companion.VACANCY_ID_KEY
+import com.pavelshelkovenko.feature_vacancy_details.VacancyDetailsFragment.Companion.VACANCY_ID_KEY
 
 class FavoriteVacanciesFragment: Fragment(R.layout.fragment_favorite_vacancies) {
 

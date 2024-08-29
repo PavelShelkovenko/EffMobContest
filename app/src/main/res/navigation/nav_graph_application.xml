@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph_application"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/nav_graph_login">
 
     <include app:graph="@navigation/nav_graph_login" />
 
@@ -13,5 +13,17 @@
 
         <deepLink app:uri="effmobcontest://main" />
     </fragment>
+
+    <dialog
+        android:id="@+id/bottomSheetRespondFragment"
+        android:name="com.pavelshelkovenko.feature_vacancy_details.BottomSheetRespondFragment"
+        android:label="BottomSheetRespondFragment" >
+
+        <deepLink app:uri="effmobcontest://bottom_sheet_respond/{question}" />
+
+        <argument
+            android:name="question"
+            app:argType="string" />
+    </dialog>
 
 </navigation>

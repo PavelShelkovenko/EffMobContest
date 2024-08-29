@@ -7,6 +7,9 @@ import com.pavelshelkovenko.domain.models.Vacancy
 import com.pavelshelkovenko.domain.repository.OffersAndVacanciesRepository
 import com.pavelshelkovenko.network.ApiException
 import com.pavelshelkovenko.network.ApiService
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 
 
 class OffersAndVacanciesRepositoryImpl(
@@ -16,19 +19,21 @@ class OffersAndVacanciesRepositoryImpl(
 ) : OffersAndVacanciesRepository {
 
     override suspend fun getOffersAndVacancies(isForceUpdate: Boolean): Result<OffersAndVacancies> {
-        val response = apiService.getOffersAndVacancies()
-        return if (response.isSuccessful) {
-            val body = response.body()
-            if (body != null) {
-                val result = mapper.mapOffersAndVacanciesDtoToDomain(body)
-                saveVacanciesToDatabase(result.vacancies)
-                Result.success(result)
+        return try {
+            val response = apiService.getOffersAndVacancies()
+            if (response.isSuccessful) {
+                val body = response.body()
+                if (body != null) {
+                    val result = mapper.mapOffersAndVacanciesDtoToDomain(body)
+                    saveVacanciesToDatabase(result.vacancies)
+                    Result.success(result)
+                } else {
+                    Result.failure(ApiException("http exception: empty body"))
+                }
             } else {
-                Result.failure(ApiException("http exception: empty body"))
+                Result.failure(ApiException("http exception: code=${response.code()}, message=${response.message()}"))
             }
-        } else {
-            Result.failure(ApiException("http exception: code=${response.code()}, message=${response.message()}"))
-        }
+        } catch (exception: Exception) { Result.failure(exception) }
     }
 
     override suspend fun getVacancyById(vacancyId: String): Result<Vacancy> {
@@ -51,6 +56,14 @@ class OffersAndVacanciesRepositoryImpl(
         val vacanciesDbo = vacancyDao.getFavoriteVacancies()
         return vacanciesDbo.map { vacancyDbo ->
             mapper.mapVacancyDboToVacancyDomain(vacancyDbo)
+        }
+    }
+
+    override suspend fun getFavoriteVacanciesFlow(): Flow<List<Vacancy>> {
+        return vacancyDao.getFavouritesFlow().map {
+            vacancyDboList -> vacancyDboList.map { vacancyDbo ->
+                mapper.mapVacancyDboToVacancyDomain(vacancyDbo)
+            }
         }
     }
 

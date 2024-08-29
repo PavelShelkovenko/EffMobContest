@@ -11,7 +11,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.pavelshelkovenko.feature_search_vacancies.R
 import com.pavelshelkovenko.feature_search_vacancies.common.VacancyAdapter
 import com.pavelshelkovenko.feature_search_vacancies.databinding.FragmentMainSearchBinding
-import com.pavelshelkovenko.feature_vacancy_details.VacancyDetails.Companion.VACANCY_ID_KEY
+import com.pavelshelkovenko.feature_vacancy_details.VacancyDetailsFragment.Companion.VACANCY_ID_KEY
 import com.pavelshelkovenko.navigation.NavCommand
 import com.pavelshelkovenko.navigation.NavCommands
 import com.pavelshelkovenko.navigation.navigate
@@ -41,16 +41,21 @@ class MainSearchFragment: Fragment(R.layout.fragment_main_search) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupUi()
+        setupAdapters()
         setupClickListeners()
         observeScreenState()
     }
 
-    private fun setupUi() {
+    private fun setupAdapters() {
         with(binding) {
             offersRv.adapter = offerAdapter
             vacanciesRv.adapter = vacancyAdapter
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.syncVacanciesWithCache()
     }
 
     private fun observeScreenState() {
@@ -77,12 +82,12 @@ class MainSearchFragment: Fragment(R.layout.fragment_main_search) {
                     progressBar.gone()
                     mainContent.visible()
                     extendedSearchButton.visible()
-                    vacancyAdapter.submitList(newScreenState.vacancies.take(3))
+                    vacancyAdapter.submitList(newScreenState.vacancies)
                     offerAdapter.submitList(newScreenState.offers)
                     extendedSearchButton.text = resources.getQuantityString(
                         com.pavelshelkovenko.ui.R.plurals.vacancies_number,
-                        newScreenState.vacancies.size,
-                        newScreenState.vacancies.size,
+                        newScreenState.vacancies.size + VACANCY_COUNT_TO_SHOW,
+                        newScreenState.vacancies.size + VACANCY_COUNT_TO_SHOW,
                     )
                 }
                 is MainSearchScreenState.Error -> {}
@@ -121,6 +126,10 @@ class MainSearchFragment: Fragment(R.layout.fragment_main_search) {
                 R.id.action_mainSearchFragment_to_extendedSearchFragment,
             )
         }
+    }
+
+    companion object {
+        const val VACANCY_COUNT_TO_SHOW = 3
     }
 }
 
