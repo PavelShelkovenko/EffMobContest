@@ -3,12 +3,12 @@ package com.pavelshelkovenko.feature_vacancy_details
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.bumptech.glide.Glide
 import com.pavelshelkovenko.domain.models.Vacancy
 import com.pavelshelkovenko.feature_vacancy_details.BottomSheetRespondFragment.Companion.NO_ARGUMENT
 import com.pavelshelkovenko.feature_vacancy_details.databinding.FragmentVacancyDetailsBinding
@@ -139,34 +139,22 @@ class VacancyDetailsFragment : Fragment(R.layout.fragment_vacancy_details) {
                 resources.getString(R.string.required_experience, vacancy.experience.text)
             employmentType.text = vacancy.schedules
             if (vacancy.appliedNumber == 0) {
-                respondsCard.root.gone()
+                appliedCard.gone()
             } else {
-                respondsCard.root.visible()
-                respondsCard.cardIcon.setImageDrawable(
-                    ResourcesCompat.getDrawable(
-                        resources,
-                        com.pavelshelkovenko.ui.R.drawable.ic_respond,
-                        context?.theme
-                    )
-                )
-                respondsCard.cardTitle.text = resources.getQuantityString(
+                appliedCard.visible()
+                Glide.with(root).load(com.pavelshelkovenko.ui.R.drawable.ic_respond).into(appliedCardIcon)
+                appliedCardTitle.text = resources.getQuantityString(
                     com.pavelshelkovenko.ui.R.plurals.applied_number,
                     vacancy.appliedNumber,
                     vacancy.appliedNumber,
                 )
             }
             if (vacancy.lookingNumber == 0) {
-                watchingCard.root.gone()
+                lookingCard.gone()
             } else {
-                watchingCard.root.visible()
-                watchingCard.cardIcon.setImageDrawable(
-                    ResourcesCompat.getDrawable(
-                        resources,
-                        com.pavelshelkovenko.ui.R.drawable.ic_watching,
-                        context?.theme
-                    )
-                )
-                watchingCard.cardTitle.text = resources.getQuantityString(
+                lookingCard.visible()
+                Glide.with(root).load(com.pavelshelkovenko.ui.R.drawable.ic_watching).into(lookingCardIcon)
+                lookingCardTitle.text = resources.getQuantityString(
                     com.pavelshelkovenko.ui.R.plurals.looking_number_details,
                     vacancy.lookingNumber,
                     vacancy.lookingNumber,

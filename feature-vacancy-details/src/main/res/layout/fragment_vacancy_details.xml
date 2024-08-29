@@ -134,29 +134,71 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.5"/>
 
-                <include
-                    android:id="@+id/responds_card"
-                    layout="@layout/details_simple_card"
-                    android:layout_width="0dp"
-                    android:layout_marginEnd="4dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/guideline"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_height="wrap_content" />
 
-                <include
-                    android:id="@+id/watching_card"
-                    layout="@layout/details_simple_card"
+                <LinearLayout
+                    android:id="@+id/applied_card"
                     android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/background_rounded_dark_green_8"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/applied_card_title"
+                        style="@style/Title_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        tools:text="147 человек уже откликнулись" />
+
+                    <ImageView
+                        android:id="@+id/applied_card_icon"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="20dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/looking_card"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/background_rounded_dark_green_8"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
                     android:layout_marginStart="4dp"
-                    app:layout_constraintStart_toStartOf="@id/guideline"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_height="wrap_content" />
+                    app:layout_constraintStart_toEndOf="@+id/guideline">
+
+                    <TextView
+                        android:id="@+id/looking_card_title"
+                        style="@style/Title_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        tools:text="2 человека сейчас смотрят" />
+
+                    <ImageView
+                        android:id="@+id/looking_card_icon"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="20dp" />
+
+                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <include
                 android:id="@+id/location_card"
