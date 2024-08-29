@@ -72,14 +72,17 @@ class MainSearchFragment: Fragment(R.layout.fragment_main_search) {
                     progressBar.gone()
                     mainContent.gone()
                     extendedSearchButton.gone()
+                    errorContent.gone()
                 }
                 MainSearchScreenState.Loading -> {
                     progressBar.visible()
                     mainContent.gone()
                     extendedSearchButton.gone()
+                    errorContent.gone()
                 }
                 is MainSearchScreenState.Content -> {
                     progressBar.gone()
+                    errorContent.gone()
                     mainContent.visible()
                     extendedSearchButton.visible()
                     vacancyAdapter.submitList(newScreenState.vacancies)
@@ -90,7 +93,12 @@ class MainSearchFragment: Fragment(R.layout.fragment_main_search) {
                         newScreenState.vacancies.size + VACANCY_COUNT_TO_SHOW,
                     )
                 }
-                is MainSearchScreenState.Error -> {}
+                is MainSearchScreenState.Error -> {
+                    errorContent.visible()
+                    progressBar.gone()
+                    mainContent.gone()
+                    extendedSearchButton.gone()
+                }
             }
         }
     }
@@ -121,10 +129,15 @@ class MainSearchFragment: Fragment(R.layout.fragment_main_search) {
             }
         }
 
-        binding.extendedSearchButton.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_mainSearchFragment_to_extendedSearchFragment,
-            )
+        with(binding) {
+            repeatButton.setOnClickListener {
+                viewModel.loadData()
+            }
+            extendedSearchButton.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_mainSearchFragment_to_extendedSearchFragment,
+                )
+            }
         }
     }
 

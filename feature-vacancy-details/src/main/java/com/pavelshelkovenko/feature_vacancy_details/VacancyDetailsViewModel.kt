@@ -36,6 +36,8 @@ class VacancyDetailsViewModel(
                         questions = questionDelegateItems
                     )
                 }
+            }.onFailure {
+                screenState.update { VacancyDetailsScreenState.Error }
             }
         }
     }
@@ -52,6 +54,8 @@ class VacancyDetailsViewModel(
                             vacancy = newVacancy
                         )
                     }
+                }.onFailure {
+                    screenState.update { VacancyDetailsScreenState.Error }
                 }
             }
         }

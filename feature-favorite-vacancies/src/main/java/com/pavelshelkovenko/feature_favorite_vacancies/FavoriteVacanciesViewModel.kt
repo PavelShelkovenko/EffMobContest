@@ -18,12 +18,16 @@ class FavoriteVacanciesViewModel(
 
     fun loadData() {
         viewModelScope.launch {
-            screenState.update { FavoriteVacanciesScreenState.Loading }
-            val vacancies = repository.getFavoriteVacancies()
-            screenState.update {
-                FavoriteVacanciesScreenState.Content(
-                    vacancies = mapToVacancyDelegateItems(vacancies)
-                )
+            try {
+                screenState.update { FavoriteVacanciesScreenState.Loading }
+                val vacancies = repository.getFavoriteVacancies()
+                screenState.update {
+                    FavoriteVacanciesScreenState.Content(
+                        vacancies = mapToVacancyDelegateItems(vacancies)
+                    )
+                }
+            } catch (ex: Exception) {
+                screenState.update { FavoriteVacanciesScreenState.Error }
             }
         }
     }
@@ -33,12 +37,14 @@ class FavoriteVacanciesViewModel(
             repository.getVacancyById(vacancyId).onSuccess { vacancy ->
                 val newVacancy = vacancy.copy(isFavorite = !vacancy.isFavorite)
                 repository.saveVacancyInCache(newVacancy)
-            }
-            val newFavoriteVacancies = repository.getFavoriteVacancies()
-            screenState.update {
-                FavoriteVacanciesScreenState.Content(
-                    vacancies = mapToVacancyDelegateItems(newFavoriteVacancies)
-                )
+                val newFavoriteVacancies = repository.getFavoriteVacancies()
+                screenState.update {
+                    FavoriteVacanciesScreenState.Content(
+                        vacancies = mapToVacancyDelegateItems(newFavoriteVacancies)
+                    )
+                }
+            }.onFailure {
+                screenState.update { FavoriteVacanciesScreenState.Error }
             }
         }
     }

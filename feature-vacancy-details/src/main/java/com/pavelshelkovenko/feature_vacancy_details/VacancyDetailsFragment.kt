@@ -58,22 +58,29 @@ class VacancyDetailsFragment : Fragment(R.layout.fragment_vacancy_details) {
             when (newScreenState) {
                 VacancyDetailsScreenState.Initial -> {
                     mainContent.gone()
+                    titleError.gone()
                     progressBar.gone()
                 }
 
                 VacancyDetailsScreenState.Loading -> {
                     mainContent.gone()
+                    titleError.gone()
                     progressBar.visible()
                 }
 
                 is VacancyDetailsScreenState.Content -> {
                     mainContent.visible()
+                    titleError.gone()
                     progressBar.gone()
                     bindMainContentData(newScreenState.vacancy)
                     questionAdapter.submitList(newScreenState.questions)
                 }
 
-                VacancyDetailsScreenState.Error -> {}
+                VacancyDetailsScreenState.Error -> {
+                    titleError.visible()
+                    mainContent.gone()
+                    progressBar.gone()
+                }
             }
         }
     }

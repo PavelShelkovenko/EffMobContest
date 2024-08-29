@@ -48,22 +48,37 @@ class FavoriteVacanciesFragment: Fragment(R.layout.fragment_favorite_vacancies) 
         with(binding) {
             when (newScreenState) {
                 FavoriteVacanciesScreenState.Initial -> {
+                    titleError.gone()
+                    titleZeroItems.gone()
                     progressBar.gone()
                     vacanciesRv.gone()
                 }
                 FavoriteVacanciesScreenState.Loading -> {
                     progressBar.visible()
                     vacanciesRv.gone()
+                    titleError.gone()
+                    titleZeroItems.gone()
                 }
                 is FavoriteVacanciesScreenState.Content -> {
+                    titleError.gone()
                     progressBar.gone()
                     vacanciesRv.visible()
                     vacancyAdapter.submitList(newScreenState.vacancies)
+                    if (newScreenState.vacancies.isEmpty()) {
+                        titleZeroItems.visible()
+                    }
                     vacancyCount.text = resources.getQuantityString(
                         com.pavelshelkovenko.ui.R.plurals.extended_search_vacancy_count,
                         newScreenState.vacancies.size,
                         newScreenState.vacancies.size,
                     )
+                }
+
+                FavoriteVacanciesScreenState.Error -> {
+                    titleError.visible()
+                    titleZeroItems.gone()
+                    progressBar.gone()
+                    vacanciesRv.gone()
                 }
             }
         }

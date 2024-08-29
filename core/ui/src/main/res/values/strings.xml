@@ -37,6 +37,9 @@
     <string name="favorite_selected_icon_description">Иконка избранного выбрана</string>
     <string name="favorite_unselected_icon_description">Иконка избранного не выбрана</string>
     <string name="company_address_pattern">%1$s, %2$s, %3$s</string>
+    <string name="zero_items_title">Здесь пока пусто</string>
+    <string name="error_title">Произошла какая-то ошибка</string>
+    <string name="repeat_button_text">Повторить</string>
 
     <plurals name="looking_number">
         <item quantity="one">Сейчас просматривает 1 человек</item>

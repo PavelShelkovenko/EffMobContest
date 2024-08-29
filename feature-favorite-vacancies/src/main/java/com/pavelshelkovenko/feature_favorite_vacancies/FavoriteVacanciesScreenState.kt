@@ -8,6 +8,8 @@ sealed interface FavoriteVacanciesScreenState {
 
     data object Loading : FavoriteVacanciesScreenState
 
+    data object Error: FavoriteVacanciesScreenState
+
     data class Content(
         val vacancies: List<DelegateItem>
     ) : FavoriteVacanciesScreenState

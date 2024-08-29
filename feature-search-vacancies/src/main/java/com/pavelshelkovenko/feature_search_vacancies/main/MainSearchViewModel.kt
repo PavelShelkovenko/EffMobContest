@@ -24,7 +24,7 @@ class MainSearchViewModel(
         loadData()
     }
 
-    private fun loadData() {
+    fun loadData() {
         viewModelScope.launch {
             screenState.update { MainSearchScreenState.Loading }
             repository.getOffersAndVacancies()
@@ -55,7 +55,6 @@ class MainSearchViewModel(
                     if (index != -1) {
                         vacancyList[index] = mapToVacancyDelegateItems(listOf(newVacancy)).first()
                     }
-
                     screenState.update { oldState ->
                         MainSearchScreenState.Content(
                             offers = (oldState as MainSearchScreenState.Content).offers,
